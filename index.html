@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Income and Expenditure</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Total Amount: <span id="total-amount" class="amount-field">0</span></h1>
+        <button onclick="location.href='addIncome.html'">Add Income</button>
+        <button onclick="location.href='addExpenditure.html'">Add Expenditure</button>
+        <button onclick="location.href='allRecords.html'">View All Records</button>
+        <button id="clear-all">Clear All</button>
+
+        <div class="tables">
+            <div>
+                <h2>Income Records</h2>
+                <button onclick="openFilterPopup('income')">Filter by Date-Time</button>
+                <table id="income-table">
+                    <thead>
+                        <tr>
+                            <th>Date-Time</th>
+                            <th>Description</th>
+                            <th>Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+            <div>
+                <h2>Expenditure Records</h2>
+                <button onclick="openFilterPopup('expenditure')">Filter by Date-Time</button>
+                <table id="expenditure-table">
+                    <thead>
+                        <tr>
+                            <th>Date-Time</th>
+                            <th>Description</th>
+                            <th>Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Filter Popup Modal -->
+    <div id="filter-popup" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeFilterPopup()">&times;</span>
+            <h2>Filter Records</h2>
+            <form id="filter-form">
+                <label for="start-date">Start Date-Time:</label>
+                <input type="datetime-local" id="start-date" required>
+                <label for="end-date">End Date-Time:</label>
+                <input type="datetime-local" id="end-date" required>
+                <button type="submit">Filter</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
